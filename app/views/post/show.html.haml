@@ -1,0 +1,25 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    .post
+      %h2
+        = link_to @post.name, post_path(@post.id)
+      .postDate
+        = "Crée le : " + @post.created_at.strftime('%d/%m/%Y à %H:%M')
+      .postCategorie
+        = "Catégorie : " + @post.category.name
+      .postDetail
+        = @post.description
+      .comments
+        = form_for @comment, url: create_comment_path(@post.id), class: 'form', html: {multipart: true} do |f|
+          .input
+            %label{for: "textArea"} 
+              = "Commentaire :"
+            = f.text_area :text, rows: 5, cols: 70, id: "textArea"
+          .form-group
+            = f.submit "Publier", class: 'btn btn-primary'
+        -@post.comments.each do |comment|
+          .comment
+            .commentDate
+              = "Crée le : " + comment.created_at.strftime('%d/%m/%Y à %H:%M')
+            .commentDetail
+              =comment.text

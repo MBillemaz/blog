@@ -1,0 +1,19 @@
+.row
+	.col-xs-8.col-xs-offset-2.well
+		%h1 Nouvel Article
+		= form_for @post, url: post_index_path, class: 'form', html: {multipart: true} do |f|
+			.form-group
+				.input
+					= "Nom :"
+					%input{name: "post[name]"}
+					-# = f.text_field :name, placeholder: "Nom"
+				.input
+					= "Catégorie :"
+					%select{name: "post[category_id"}
+						- Category.all.each do |c|
+							%option{value: c.id}= c.name
+				.input
+					= "Article : "
+					= f.text_area :description, rows: 10, cols: 70
+			.form-group
+				= f.submit "Publier", class: 'btn btn-primary pull-right'

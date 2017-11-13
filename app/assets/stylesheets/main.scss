@@ -1,0 +1,75 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(43, 62, 80, 0.8);
+    z-index: 100;
+    display: flex;
+  }
+
+  .CategoryButton {
+    border: none;
+    margin-left: 4%;
+    color: white;
+    margin-top: 2%;
+    font-size: 25px;
+  }
+
+  a.my-account {
+    color: #fff;
+    margin-right: 20px;
+    &:before {
+      content: '» ';
+    }
+  }
+
+  a.logout {
+    color: #fff;
+    margin-right: 20px;
+    &:before {
+      color: red;
+      content: '× ';
+    }
+  }
+
+  .content {
+    padding-top: 80px;
+  }
+
+  .input{
+    margin-top: 5%;
+  }
+
+  .input * {
+    vertical-align: top;
+  }
+  .post{
+    border: 1px solid black;
+    margin-bottom: 5%;
+  }
+
+  .post h2 {
+    text-align: center;
+  }
+
+  .postDate{
+    color: #999999;
+  }
+
+  .postCategorie{
+    margin-bottom: 5%;
+  }
+  .postDetail{
+    border: 1px solid grey;
+  }
+
+  .commentDate{
+    color: #999999;
+    font-size: 9px;
+  }
+
+  .comment{
+    margin-bottom: 2%;
+  }

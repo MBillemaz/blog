@@ -1,0 +1,17 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    -@posts.each do |post|
+      .post
+        %h2
+          = link_to post.name, post_path(post.id)
+        .postDate
+          = "Crée le : " + post.created_at.strftime('%d/%m/%Y à %H:%M')
+        .postCategorie
+          = "Catégorie : " + post.category.name
+        .postDetail
+          =post.description
+
+-# - if @posts.first.id != Post.all.last.id 
+-#   = link_to "Précédent", request.url, style: 'color:#000;', data: {do: "more", last: @images.last.id}
+-# - if @posts.last.id != Post.all.first.id 
+-#   = link_to "Suivant", , style: 'color:#000;', data: {do: "more", last: @images.last.id}
